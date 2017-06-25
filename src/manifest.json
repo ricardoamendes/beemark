@@ -1,0 +1,45 @@
+{
+  "name": "BeeMark",
+  "version": "0.0.0.1",
+  "description": "Drag and Drop your favourite webpages in the Bookmarks bar.",
+  "permissions": [
+    "bookmarks",
+    "webNavigation",
+    "contextMenus",
+    "storage",
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "browser_action": {
+    "default_title": "BeeMark",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "web_accessible_resources": [
+    "images/*"
+  ],
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*/*",
+        "http://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
+}
