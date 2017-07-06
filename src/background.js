@@ -2,10 +2,6 @@
 
 var toggle = false
 
-const print = message => {
-    console.log(message)
-}
-
 const init = () => {
     getToggle(toggle => {
         if (toggle) {}
@@ -46,13 +42,13 @@ const setToggle = (value, callback) => {
 const disable = () => {
     chrome
         .browserAction
-        .setIcon({path: "images/logo_off.png"})
+        .setIcon({path: "images/icon_inactive.png"})
 }
 
 const enable = () => {
     chrome
         .browserAction
-        .setIcon({path: "images/logo_on.png"})
+        .setIcon({path: "images/icon_active.png"})
 }
 
 const update = toggle => {
